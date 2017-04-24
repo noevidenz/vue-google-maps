@@ -16,11 +16,11 @@ const props = {
     type: Object
   },
   path: {
-    type: Array,
+    type: [Array, Object],
     twoWay: true
   },
   paths: {
-    type: Array,
+    type: [Array, Object],
     twoWay: true
   },
   deepWatch: {
@@ -110,7 +110,7 @@ export default {
       if (path) {
         clearEvents();
 
-        this.$polygonObject.setPaths(path);
+        this.$polygonObject.setPath(path);
 
         const mvcPath = this.$polygonObject.getPath();
         const eventListeners = [];
